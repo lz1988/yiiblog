@@ -3,9 +3,7 @@
 class SiteController extends Controller
 {
 	public $layout='column2';
-	/**
-	 * Declares class-based actions.
-	 */
+
 	public function actions()
 	{
 		
@@ -14,6 +12,9 @@ class SiteController extends Controller
 			'captcha'=>array(
 				'class'=>'CCaptchaAction',
 				'backColor'=>0xFFFFFF,
+				//'fixedVerifyCode' => substr(md5(time()),0,4), 
+				'transparent'=>true,
+
 			),
 			// page action renders "static" pages stored under 'protected/views/site/pages'
 			// They can be accessed via: index.php?r=site/page&view=FileName
@@ -23,10 +24,7 @@ class SiteController extends Controller
 		);
 	}
 
-	/**
-	 * This is the default 'index' action that is invoked
-	 * when an action is not explicitly requested by users.
-	 */
+
 	public function actionIndex()
 	{
 		$criteria=new CDbCriteria();
@@ -98,6 +96,7 @@ class SiteController extends Controller
 			$criteria -> condition = 'status = 0 and id <>'.$model->id.'';
 			$datalist = Article::model()->findAll($criteria);
 
+			//相关文章显示
 			for($i = 0; $i < count($datalist); $i++ )
 			{
 				$arr_similar[$i] = similar_text($datalist[$i]['key_words'], $model->key_words);
@@ -113,7 +112,11 @@ class SiteController extends Controller
 				}
 			}
 
-			$this->render('show',array('model'=>$model,'new_title_array'=>$new_title_array,'comments'=>$comments));
+			$last_data = Article::model()->find(array('select'=>'id,article_title','order'=>'id desc','condition'=>'id < :ID and status = :STATUS','params'=>array(':ID'=>$arid,'STATUS'=>0)));
+	
+			$next_data = Article::model()->find(array('select'=>'id,article_title','condition'=>'id > :ID','params'=>array(':ID'=>$arid)));
+
+			$this->render('show',array('model'=>$model,'new_title_array'=>$new_title_array,'comments'=>$comments,'last_data'=>$last_data,'next_data'=>$next_data));
 		}else{
 			throw new CHttpException(404);exit;
 		}
@@ -134,18 +137,22 @@ class SiteController extends Controller
 	/*处理文章评论*/
 	public function actionComments()
 	{
+
 		if(isset($_POST['Comments']))
 		{
 			$model    = new Comments;
 			$comments = $_POST['Comments'];
 			$model->attributes = $comments;
-			if($model->validate())
+			if(isset($_POST['ajax']) && $_POST['ajax']==='comments-form')
 			{
-				if ($model->save()){
-					$this->redirect(array('site/show', 'id'=>$comments['article_id']));exit;
+				echo CActiveForm::validate($model);
+				Yii::app()->end();
+			}
+
+			if ($model->save()){
+					Bases::message("success","恭喜你、发表评论成功","?r=site/show&id={$comments['article_id']}");
 				}else{
-					Bases::message("error","操作失败");
-				}
+					Bases::message("error","对不起、操作失败");
 			}
 		}
 	}

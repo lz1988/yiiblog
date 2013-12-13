@@ -36,35 +36,40 @@
 	 ?>
 </div>
 
+<div class="page_nav">
+    <div class="pre_page" title="上一篇">
+		<?php echo CHtml::link($last_data->article_title,array('site/show','id'=>$last_data->id));?>
+	</div>
+    <div class="next_page" title="下一篇">
+        	<?php echo CHtml::link($next_data->article_title,array('site/show','id'=>$next_data->id));?>
+    </div>
+</div>
+
+
+
 <div id="comments">
 	<div class="titles">相关推荐</div>
-	<div class="portlet-content">
-		<ul>
-			<?php foreach($new_title_array as $id=>$title): ?>
-	 	 		<li><?php echo CHtml::link($title,array('site/show','id'=>$id));?></li></span>
-			<?php endforeach;?>
- 		</ul>
+		<div class="portlet-content">
+			<ul>
+				<?php foreach($new_title_array as $id=>$title): ?>
+		 	 		<li><?php echo CHtml::link($title,array('site/show','id'=>$id));?></li></span>
+				<?php endforeach;?>
+	 		</ul>
 
-</div>
+		</div>
 	</div>
 </div>
 
 
 <div id="comments">
 	<div class="titles">发表评论</div>
-<?php if(Yii::app()->user->hasFlash('contact')): ?>
-
-<div class="flash-success">
-	<?php echo Yii::app()->user->getFlash('contact'); ?>
-</div>
-
-<?php else: ?>
 
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'contact-form',
-	'enableClientValidation'=>true,
+	'id'=>'comments-form',
+	'enableClientValidation'=>false,
+	'enableAjaxValidation'=>true,
 	'action'=>array('site/comments'),  
 	'clientOptions'=>array(
 		'validateOnSubmit'=>true,
@@ -117,7 +122,6 @@
 		<div class="hint">请输入上面图片上的字母，不区分大小写。</div>
 		<?php echo $form->error($comments,'verifyCode'); ?>
 	</div>
-	<?php endif; ?>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('提交'); ?>
