@@ -324,3 +324,31 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 	color: white;
 	text-decoration: none;
 }
+
+.page_nav {
+	height: 26px;
+	line-height: 26px;
+	margin: 10px auto;
+	background: #F7F7F7;
+	padding: 4px 2px;
+}
+
+
+.pre_page {
+	float: left;
+	width: 310px;
+	background: url(../images/icon.gif) no-repeat 2px -51px;
+	padding-left: 16px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.next_page {
+	float: right;
+	width: 300px;
+	background: url(../images/icon.gif) no-repeat right -79px;
+	padding-right: 20px;
+	text-align: right;
+	white-space: nowrap;
+	overflow: hidden;
+}
