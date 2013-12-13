@@ -177,32 +177,6 @@ class SiteController extends Controller
 					Yii::app()->user->setFlash('contact','谢谢联系我，我会尽快给你答复');
 					$this->refresh();
 				}
-				/*require_once(Yii::getPathOfAlias('application.extensions.phpmailer').DIRECTORY_SEPARATOR.'class.phpmailer.php');
-				$mail= new PHPMailer();
-				$mail->IsSMTP();       
-				$mail->SMTPAuth = true;       
-				$mail->Host = "smtp.163.com";      
-				$mail->Port = 25;      
-				$mail->CharSet = "UTF-8";   
-				      
-				$mail->Username = "lz19881123@163.com";   
-				$mail->Password = "513245459";    
-				      
-				$mail->From = "lz19881123@163.com";       
-				$mail->FromName = "lz19881123@163.com";      
-				      
-				$mail->Subject = $model->subject;     
-				$mail->Body = $model->body;  
-				      
-				$mail->IsHTML(true);   
-				$mail->AddAddress($model->email, $model->name); //設定收件者郵件及名稱        
-		        
-		        if($mail->Send()){
-					Yii::app()->user->setFlash('contact','谢谢联系我们，我们会尽快给你答复');
-					$this->refresh();
-				}else{
-					echo $mail->ErrorInfo;
-				}*/
 			}
 		}
 		$this->render('contact',array('model'=>$model,'datalist'=>$datalist,'pagebar'=>$pager));
