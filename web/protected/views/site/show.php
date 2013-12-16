@@ -36,12 +36,21 @@
 	 ?>
 </div>
 
+<!--翻页-->
 <div class="page_nav">
     <div class="pre_page" title="上一篇">
+    	<?php if ($last_data):?>
 		<?php echo CHtml::link($last_data->article_title,array('site/show','id'=>$last_data->id));?>
+        <?php else:?>
+        <?php echo "没有了";?>
+        <?php endif;?>
 	</div>
     <div class="next_page" title="下一篇">
-        	<?php echo CHtml::link($next_data->article_title,array('site/show','id'=>$next_data->id));?>
+    	<?php if ($next_data):?>
+    	<?php echo CHtml::link($next_data->article_title,array('site/show','id'=>$next_data->id));?>
+        <?php else:?>
+        <?php echo "没有了";?>
+        <?php endif;?>
     </div>
 </div>
 
@@ -55,10 +64,27 @@
 		 	 		<li><?php echo CHtml::link($title,array('site/show','id'=>$id));?></li></span>
 				<?php endforeach;?>
 	 		</ul>
-
 		</div>
 	</div>
+    
+    <div class="digg">  
+    <div id="dig_up" class="digup"> 
+        <span id="num_up"></span> 
+        <p>很好，很强大！</p> 
+        <div id="bar_up" class="bar"><span></span><i></i></div> 
+    </div> 
+    
+    <div id="dig_down" class="digdown"> 
+        <span id="num_down"></span> 
+        <p>太差劲了！</p> 
+        <div id="bar_down" class="bar"><span></span><i></i></div> 
+    </div> 
+    <div id="msg"></div>  
+    
+</div> 
 </div>
+
+
 
 
 <div id="comments">
@@ -132,4 +158,44 @@
 </div>
 <?php endif; ?>
 </div>
+
+<script type="text/javascript">
+$(function(){
+	$("#dig_up").hover(function(){
+		$(this).addClass("digup_on");
+	},function(){
+		$(this).removeClass("digup_on");
+	});
+	$("#dig_down").hover(function(){
+		$(this).addClass("digdown_on");
+	},function(){
+		$(this).removeClass("digdown_on");
+	});
+	
+	getdata("?r=site/command",<?php echo $model->id;?>);
+		
+	$("#dig_up").click(function(){
+		getdata("?r=site/command&key=like",<?php echo $model->id;?>);
+	});
+	
+	$("#dig_down").click(function(){
+		getdata("?r=site/command&key=unlike",<?php echo $model->id;?>);
+	});
+});
+
+function getdata(url,sid){
+	$.getJSON(url,{id:sid},function(data){
+		if(data.success==1){
+			$("#num_up").html(data.like);
+			$("#bar_up span").css("width",data.like_percent);
+			$("#bar_up i").html(data.like_percent);
+			$("#num_down").html(data.unlike);
+			$("#bar_down span").css("width",data.unlike_percent);
+			$("#bar_down i").html(data.unlike_percent);
+		}else{
+			$("#msg").html(data.msg).show().css({'opacity':1,'top':'40px'}).animate({top:'-50px',opacity:0}, "slow");
+		}
+	});
+}
+</script>
 

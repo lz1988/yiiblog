@@ -270,10 +270,11 @@ div.search-form
 
 .portlet-content li
 {
-	padding: 2px 0 4px 0px;
+	padding: 2px 0 4px 18px;
 	overflow:hidden;
 	line-height: 20px;
 	height:20px;
+	background: url(../images/icons.gif) no-repeat 0 4px;
 }
 
 .operations

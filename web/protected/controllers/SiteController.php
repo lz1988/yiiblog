@@ -225,4 +225,21 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+
+	public function actionCommand()
+	{
+		$action = $_GET['key'];
+		$id = Yii::app()->request->getParam('id');
+		$ip = Yii::app()->request->userHostAddress;
+		if($action=='like'){
+			Site::model()->likes(1,$id,$ip);
+		}elseif($action=='unlike'){
+			Site::model()->likes(0,$id,$ip);
+		}else{
+			echo Site::model()->jsons($id);
+		}
+	}
+
+	
 }
