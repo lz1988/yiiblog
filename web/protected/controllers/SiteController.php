@@ -233,9 +233,9 @@ class SiteController extends Controller
 		$id = Yii::app()->request->getParam('id');
 		$ip = Yii::app()->request->userHostAddress;
 		if($action=='like'){
-			Site::model()->likes(1,$id,$ip);
+			Site::model()->likes('like',$id,$ip);
 		}elseif($action=='unlike'){
-			Site::model()->likes(0,$id,$ip);
+			Site::model()->likes('unlike',$id,$ip);
 		}else{
 			echo Site::model()->jsons($id);
 		}
