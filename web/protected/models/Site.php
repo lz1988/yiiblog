@@ -31,9 +31,15 @@ class Site extends CActiveRecord
 			$votes = new Votes;
 			$votes['vid'] = $id;
 			$votes['ip']  = $ip;
-			$votes->save();
+			if ($votes->save()){
+				echo $this->jsons($id);
+			}else{
+				$arr['success'] = 0; 
+            	$arr['msg'] = '操作失败，请重试'; 
+            	echo json_encode($arr); 
+			}
 
- 			echo $this->jsons($id);
+ 			
 		}else{
 			$msg = $type=='like'?'您已经顶过了':'您已经踩过了';
 			$arr['success'] = 0;
