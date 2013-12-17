@@ -85,10 +85,10 @@ return array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
 				array(
-					//'class'=>'CFileLogRoute',
-					//'levels'=>'error, warning',
-					'class'=>'ext.yiidebugtoolbar.YiiDebugToolbarRoute', 
-              		'ipFilters'=>array('127.0.0.1'), 
+					'class'=>'CFileLogRoute',
+					'levels'=>'error, warning',
+					//'class'=>'ext.yiidebugtoolbar.YiiDebugToolbarRoute', 
+              		//'ipFilters'=>array('127.0.0.1'), 
 				),
 				// uncomment the following to show log messages on web pages
 				
