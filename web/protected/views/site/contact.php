@@ -92,7 +92,7 @@
 	)); ?>
 
 	<div class="author">
-		<?php echo $comment['name']; ?> says:
+		<?php echo $comment['name']; ?> 说:
 	</div>
 
 	<div class="time">

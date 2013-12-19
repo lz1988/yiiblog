@@ -20,4 +20,12 @@ class Controller extends CController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+	
+	public $menuarr = array(
+				array('label'=>'首页', 'url'=>array('/site/index')),
+				array('label'=>'关于我', 'url'=>array('/site/about')),
+				array('label'=>'联系我', 'url'=>array('/site/contact')),
+				//array('label'=>'登陆', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+				//array('label'=>'退出 ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+			);
 }

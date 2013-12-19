@@ -113,10 +113,19 @@ class SiteController extends Controller
 			}
 
 			$last_data = Article::model()->find(array('select'=>'id,article_title','order'=>'id desc','condition'=>'id < :ID and status = :STATUS','params'=>array(':ID'=>$arid,'STATUS'=>0)));
-	
+
 			$next_data = Article::model()->find(array('select'=>'id,article_title','condition'=>'id > :ID','params'=>array(':ID'=>$arid)));
 
-			$this->render('show',array('model'=>$model,'new_title_array'=>$new_title_array,'comments'=>$comments,'last_data'=>$last_data,'next_data'=>$next_data));
+            $model1    = new Comments;
+            $criteria1 = new CDbCriteria;
+            $criteria1->condition = 'article_id=:article_id';
+            $criteria1->params = array(':article_id'=>$arid);
+            $count = $model1->count($criteria1);
+            $pager = new CPagination($count);
+            $pager->pageSize = 8;  //每页显示的个数
+            $pager->applyLimit($criteria1);
+            $datalist = $model1->findAll($criteria1);
+			$this->render('show',array('model'=>$model,'new_title_array'=>$new_title_array,'comments'=>$comments,'last_data'=>$last_data,'next_data'=>$next_data,'pagebar'=>$pager,'datalist'=>$datalist));
 		}else{
 			throw new CHttpException(404);exit;
 		}

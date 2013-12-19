@@ -59,7 +59,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=yiiweb',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '111',
+			'password' => '',
 			'charset' => 'utf8',
 			'enableProfiling'=>true, 
 			'enableParamLogging'=>true,

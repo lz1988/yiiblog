@@ -159,6 +159,36 @@
 <?php endif; ?>
 </div>
 
+<?php if ($datalist):?>
+<div id="comments">
+    <div class="titles">评论列表</div>
+    <?php foreach($datalist as $comment): ?>
+        <div class="comment" id="c<?php echo $comment['id']; ?>">
+
+            <?php echo CHtml::link("#{$comment['id']}","#c{$comment['id']}", array(
+                'class'=>'cid',
+                'title'=>"#{$comment['id']}",
+            )); ?>
+
+            <div class="author">
+                <?php echo $comment['name']; ?> 说:
+            </div>
+
+            <div class="time">
+                <?php echo date('Y-m-d H:i:s',strtotime($comment['fstcreate'])); ?>
+            </div>
+
+            <div class="content">
+                <?php echo nl2br(CHtml::encode($comment['body'])); ?>
+            </div>
+
+    </div>
+    <?php endforeach; ?>
+    <?php $this->widget('CLinkPager',array('pages'=>$pagebar));?>
+</div>
+<?php endif; ?>
+
+
 <script type="text/javascript">
 $(function(){
 	$("#dig_up").hover(function(){
