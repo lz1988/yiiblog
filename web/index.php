@@ -3,6 +3,7 @@
 // change the following paths if necessary
 $yii=dirname(__FILE__).'/../framework/yii.php';
 $config=dirname(__FILE__).'/protected/config/main.php';
+ini_set("date_default_timezone_set","PRC");
 ini_set("memory_limit","1000M");
 /*ini_set("SMTP","smtp.qq.com" ); 
 ini_set('sendmail_from', '513245459@qq.com'); 
