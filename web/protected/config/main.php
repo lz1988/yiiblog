@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
@@ -59,7 +59,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=yiiweb',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '123456',
+			'password' => '111',
 			'charset' => 'utf8',
 			'enableProfiling'=>true, 
 			'enableParamLogging'=>true,
