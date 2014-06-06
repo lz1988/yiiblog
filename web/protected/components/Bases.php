@@ -213,5 +213,9 @@ html,body,div,p,a,h3{margin:0;padding:0;}
         }
         return $new_title_array;
     }
+
+    static function arr_menu(){
+        return array('dddddddddd');
+    }
 }
 ?>

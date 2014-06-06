@@ -1,7 +1,3 @@
-<?php
-$this->pageTitle=Yii::app()->name;
-?>
-
 
 <?php foreach($model as $row):?> 
 <div id="mainbody">

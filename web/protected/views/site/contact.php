@@ -1,4 +1,4 @@
-<?php $this->pageTitle=Yii::app()->name . ' - Contact Me';?>
+<?php $this->pageTitle=Yii::app()->name . ' - 联系我';?>
 
 <h1>Contact Me</h1>
 

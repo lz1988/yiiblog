@@ -6,7 +6,7 @@ $this->pageTitle=Yii::app()->name;
 <div id="mainbody">
 
 <div id="maintitle">
-	<h3><?php echo CHtml::link($row["article_title"],array('site/show','id'=>$row['id']));?></h3>
+	<h3><?php echo CHtml::link($row["article_title"],array('article/view','id'=>$row['id']));?></h3>
 </div>
 
 <div id="mainnav">
@@ -24,13 +24,13 @@ $this->pageTitle=Yii::app()->name;
 		$new_key_words = explode(',',$row['key_words']);
 		foreach($new_key_words as $val)
 		{
-			$html .= '<a href ="?r=site/search_article&search_article='.CHtml::encode($val).'">'.$val.'</a>&nbsp;&nbsp;';
+			$html .= CHtml::link($val,array("article/search","keywords"=>CHtml::encode($val))).'&nbsp;&nbsp;';
 		}
 		echo $html;
 
 	}
 	 ?>
-	<span class="readall"><?php echo CHtml::link("阅读全文",array('site/show','id'=>$row['id']));?></span>
+	<span class="readall"><?php echo CHtml::link("阅读全文",array('article/view','id'=>$row['id']));?></span>
 </div>
  
 

@@ -22,10 +22,24 @@ class Controller extends CController
 	public $breadcrumbs=array();
 	
 	public $menuarr = array(
-				array('label'=>'首页', 'url'=>array('/site/index')),
-				array('label'=>'关于我', 'url'=>array('/site/about')),
-				array('label'=>'联系我', 'url'=>array('/site/contact')),
+				array('label'=>'博客首页', 'url'=>array('/site')),
+				//array('label'=>'关于我', 'url'=>array('/site/about')),
+				//array('label'=>'联系我', 'url'=>array('/contact')),
 				//array('label'=>'登陆', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				//array('label'=>'退出 ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			);
+    );
+
+    public function arrmenu(){
+
+       $ar = Yii::app()->db->createCommand('SELECT article_type_name FROM article_type order by id desc')->queryAll();
+       $re[0]['label'] = "首页";
+       $re[0]['url'][] = "/site/index";
+       for($i = 1; $i < count($ar)+1; $i++){
+           $re[$i]['label']   = $ar[$i]['article_type_name'];
+           $re[$i]['url'][]     = "/article/index/category/".$ar[$i]['article_type_name'];
+       }
+        return $re;
+        //echo '<pre>';print_r($re);
+
+    }
 }

@@ -31,7 +31,7 @@
 
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
-			'items' => $this->menuarr,
+			'items' => $this->arrmenu(),
 		)); ?>
 	</div><!-- mainmenu -->
 	<?php if(isset($this->breadcrumbs)):?>
@@ -46,11 +46,15 @@
 
 	<div id="tool">
 		<?php echo CHtml::link("",array('#top'),array('id'=>'back-to-top'));?>
-		<?php echo CHtml::link("意 见 反 馈",array('site/contact'),array('id'=>'feedback'));?>
+		<?php echo CHtml::link("意 见 反 馈",array('/contact'),array('id'=>'feedback'));?>
 	</div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by <a href="http://miucool.cn">MiuCool.cn</a>.
+        <div class="foot_info">
+        <?php echo CHtml::link("联系站长",array('/contact'));?>
+        <?php echo CHtml::link("关于站长",array('/about'));?>
+         </div>
+		Copyright &copy; <?php echo date('Y'); ?> by <a href="http://miucool.cn">miucool.cn</a>.
 		All Rights Reserved.
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->

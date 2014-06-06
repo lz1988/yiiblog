@@ -5199,3 +5199,32 @@ Stack trace:
 REQUEST_URI=/web/adminweb.php?r=database
 HTTP_REFERER=http://blog.com/web/adminweb.php?r=manage/index
 ---
+2014/06/06 17:29:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "database"。' in G:\AppServ\www\yiiblog\framework\web\CWebApplication.php:286
+Stack trace:
+#0 G:\AppServ\www\yiiblog\framework\web\CWebApplication.php(141): CWebApplication->runController('database')
+#1 G:\AppServ\www\yiiblog\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 G:\AppServ\www\yiiblog\web\adminweb.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/adminweb.php?r=database
+HTTP_REFERER=http://blog.com/adminweb.php?r=manage/index
+---
+2014/06/06 17:31:32 [warning] [application] Failed to set unsafe attribute "article_click_count" of "Article".
+in G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\ArticleController.php (76)
+in G:\AppServ\www\yiiblog\web\adminweb.php (17)
+2014/06/06 17:31:32 [warning] [application] Failed to set unsafe attribute "fstcreate" of "Article".
+in G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\ArticleController.php (76)
+in G:\AppServ\www\yiiblog\web\adminweb.php (17)
+2014/06/06 17:31:32 [error] [php] Cannot modify header information - headers already sent by (output started at G:\AppServ\www\yiiblog\web\protected\adminweb\components\Xupload.php:1) (G:\AppServ\www\yiiblog\framework\web\CHttpRequest.php:789)
+Stack trace:
+#0 G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\ArticleController.php(82): ArticleController->redirect()
+#1 G:\AppServ\www\yiiblog\framework\web\actions\CInlineAction.php(49): ArticleController->actionUpdate()
+#2 G:\AppServ\www\yiiblog\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 G:\AppServ\www\yiiblog\framework\web\CController.php(286): ArticleController->runAction()
+#4 G:\AppServ\www\yiiblog\framework\web\CController.php(265): ArticleController->runActionWithFilters()
+#5 G:\AppServ\www\yiiblog\framework\web\CWebApplication.php(282): ArticleController->run()
+#6 G:\AppServ\www\yiiblog\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 G:\AppServ\www\yiiblog\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#8 G:\AppServ\www\yiiblog\web\adminweb.php(17): CWebApplication->run()
+REQUEST_URI=/adminweb.php?r=article/update&id=46
+in G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\ArticleController.php (82)
+in G:\AppServ\www\yiiblog\web\adminweb.php (17)

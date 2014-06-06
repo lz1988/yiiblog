@@ -50,6 +50,14 @@ return array(
 			),
 		),
 		*/
+        'urlManager'=>array(
+            'urlFormat'=>'path',
+            'showScriptName'=>false,     // false不需要引号
+            'urlSuffix'=>'.html',
+            'rules'=>array(
+                    'site'=>'site/index',
+                     ),
+        ),
 		/*'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		),*/

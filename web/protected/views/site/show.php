@@ -1,4 +1,6 @@
-
+<?php
+$this->pageTitle=Yii::app()->name."-".$model['article_title'];
+?>
 <div class="post">
 	<div class="title">
 		<h3><?php echo $model['article_title']; ?></h3>
