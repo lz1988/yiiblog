@@ -36,7 +36,7 @@ class Controller extends CController
        $re[0]['url'][] = "/site/index";
        for($i = 1; $i < count($ar)+1; $i++){
            $re[$i]['label']   = $ar[$i]['article_type_name'];
-           $re[$i]['url'][]     = "/article/index/category/".$ar[$i]['article_type_name'];
+           $re[$i]['url'][]     = "/article-".$ar[$i]['article_type_name'];
        }
         return $re;
         //echo '<pre>';print_r($re);

@@ -5228,3 +5228,147 @@ Stack trace:
 REQUEST_URI=/adminweb.php?r=article/update&id=46
 in G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\ArticleController.php (82)
 in G:\AppServ\www\yiiblog\web\adminweb.php (17)
+2014/06/09 15:34:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "database"。' in G:\AppServ\www\yiiblog\framework\web\CWebApplication.php:286
+Stack trace:
+#0 G:\AppServ\www\yiiblog\framework\web\CWebApplication.php(141): CWebApplication->runController('database')
+#1 G:\AppServ\www\yiiblog\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 G:\AppServ\www\yiiblog\web\adminweb.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/adminweb.php?r=database
+HTTP_REFERER=http://blog.com/adminweb.php?r=manage/index
+---
+2014/06/09 15:47:44 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'comment'. The SQL statement executed was: SELECT article.article_title,comment.* from article left join comments on article.id = comments.article_id.
+in G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\CommentController.php (13)
+in G:\AppServ\www\yiiblog\web\adminweb.php (17)
+2014/06/09 15:47:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'comment'. The SQL statement executed was: SELECT article.article_title,comment.* from article left join comments on article.id = comments.article_id' in G:\AppServ\www\yiiblog\framework\db\CDbCommand.php:541
+Stack trace:
+#0 G:\AppServ\www\yiiblog\framework\db\CDbCommand.php(376): CDbCommand->queryInternal('', 0, Array)
+#1 G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\CommentController.php(13): CDbCommand->query()
+#2 G:\AppServ\www\yiiblog\framework\web\actions\CInlineAction.php(49): CommentController->actionIndex()
+#3 G:\AppServ\www\yiiblog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 G:\AppServ\www\yiiblog\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 G:\AppServ\www\yiiblog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 G:\AppServ\www\yiiblog\framework\web\CWebApplication.php(282): CController->run('')
+#7 G:\AppServ\www\yiiblog\framework\web\CWebApplication.php(141): CWebApplication->runController('comment')
+#8 G:\AppServ\www\yiiblog\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 G:\AppServ\www\yiiblog\web\adminweb.php(17): CApplication->run()
+#10 {main}
+REQUEST_URI=/adminweb.php?r=comment
+---
+2014/06/09 15:49:24 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'comment'. The SQL statement executed was: SELECT article.article_title,comment.* from article left join comments on article.id = comments.article_id.
+in G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\CommentController.php (13)
+in G:\AppServ\www\yiiblog\web\adminweb.php (17)
+2014/06/09 15:49:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'comment'. The SQL statement executed was: SELECT article.article_title,comment.* from article left join comments on article.id = comments.article_id' in G:\AppServ\www\yiiblog\framework\db\CDbCommand.php:541
+Stack trace:
+#0 G:\AppServ\www\yiiblog\framework\db\CDbCommand.php(376): CDbCommand->queryInternal('', 0, Array)
+#1 G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\CommentController.php(13): CDbCommand->query()
+#2 G:\AppServ\www\yiiblog\framework\web\actions\CInlineAction.php(49): CommentController->actionIndex()
+#3 G:\AppServ\www\yiiblog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 G:\AppServ\www\yiiblog\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 G:\AppServ\www\yiiblog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 G:\AppServ\www\yiiblog\framework\web\CWebApplication.php(282): CController->run('')
+#7 G:\AppServ\www\yiiblog\framework\web\CWebApplication.php(141): CWebApplication->runController('comment')
+#8 G:\AppServ\www\yiiblog\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 G:\AppServ\www\yiiblog\web\adminweb.php(17): CApplication->run()
+#10 {main}
+REQUEST_URI=/adminweb.php?r=comment
+---
+2014/06/09 15:49:26 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'comment'. The SQL statement executed was: SELECT article.article_title,comment.* from article left join comments on article.id = comments.article_id.
+in G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\CommentController.php (13)
+in G:\AppServ\www\yiiblog\web\adminweb.php (17)
+2014/06/09 15:49:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'comment'. The SQL statement executed was: SELECT article.article_title,comment.* from article left join comments on article.id = comments.article_id' in G:\AppServ\www\yiiblog\framework\db\CDbCommand.php:541
+Stack trace:
+#0 G:\AppServ\www\yiiblog\framework\db\CDbCommand.php(376): CDbCommand->queryInternal('', 0, Array)
+#1 G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\CommentController.php(13): CDbCommand->query()
+#2 G:\AppServ\www\yiiblog\framework\web\actions\CInlineAction.php(49): CommentController->actionIndex()
+#3 G:\AppServ\www\yiiblog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 G:\AppServ\www\yiiblog\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 G:\AppServ\www\yiiblog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 G:\AppServ\www\yiiblog\framework\web\CWebApplication.php(282): CController->run('')
+#7 G:\AppServ\www\yiiblog\framework\web\CWebApplication.php(141): CWebApplication->runController('comment')
+#8 G:\AppServ\www\yiiblog\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 G:\AppServ\www\yiiblog\web\adminweb.php(17): CApplication->run()
+#10 {main}
+REQUEST_URI=/adminweb.php?r=comment
+---
+2014/06/09 15:49:32 [error] [exception.CException] exception 'CException' with message 'CommentController 无法找到请求的视图 "article".' in G:\AppServ\www\yiiblog\framework\web\CController.php:878
+Stack trace:
+#0 G:\AppServ\www\yiiblog\framework\web\CController.php(782): CController->renderPartial('article', Array, true)
+#1 G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\CommentController.php(23): CController->render('article', Array)
+#2 G:\AppServ\www\yiiblog\framework\web\actions\CInlineAction.php(49): CommentController->actionIndex()
+#3 G:\AppServ\www\yiiblog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 G:\AppServ\www\yiiblog\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 G:\AppServ\www\yiiblog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 G:\AppServ\www\yiiblog\framework\web\CWebApplication.php(282): CController->run('')
+#7 G:\AppServ\www\yiiblog\framework\web\CWebApplication.php(141): CWebApplication->runController('comment')
+#8 G:\AppServ\www\yiiblog\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 G:\AppServ\www\yiiblog\web\adminweb.php(17): CApplication->run()
+#10 {main}
+REQUEST_URI=/adminweb.php?r=comment
+---
+2014/06/09 15:53:43 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ar.status' in 'where clause'. The SQL statement executed was: SELECT article.article_title,comments.* from article  join comments on article.id = comments.article_id where 1 and ar.status=1.
+in G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\CommentController.php (13)
+in G:\AppServ\www\yiiblog\web\adminweb.php (17)
+2014/06/09 15:53:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ar.status' in 'where clause'. The SQL statement executed was: SELECT article.article_title,comments.* from article  join comments on article.id = comments.article_id where 1 and ar.status=1' in G:\AppServ\www\yiiblog\framework\db\CDbCommand.php:541
+Stack trace:
+#0 G:\AppServ\www\yiiblog\framework\db\CDbCommand.php(376): CDbCommand->queryInternal('', 0, Array)
+#1 G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\CommentController.php(13): CDbCommand->query()
+#2 G:\AppServ\www\yiiblog\framework\web\actions\CInlineAction.php(49): CommentController->actionIndex()
+#3 G:\AppServ\www\yiiblog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 G:\AppServ\www\yiiblog\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 G:\AppServ\www\yiiblog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 G:\AppServ\www\yiiblog\framework\web\CWebApplication.php(282): CController->run('index')
+#7 G:\AppServ\www\yiiblog\framework\web\CWebApplication.php(141): CWebApplication->runController('comment/index')
+#8 G:\AppServ\www\yiiblog\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 G:\AppServ\www\yiiblog\web\adminweb.php(17): CApplication->run()
+#10 {main}
+REQUEST_URI=/adminweb.php?r=comment%2Findex&article_title=&status=1&searchsubmit=%E6%9F%A5%E8%AF%A2
+HTTP_REFERER=http://blog.com/adminweb.php?r=comment%2Findex&article_title=&status=1&searchsubmit=%E6%9F%A5%E8%AF%A2
+---
+2014/06/09 15:54:02 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'comment.status' in 'where clause'. The SQL statement executed was: SELECT article.article_title,comments.* from article  join comments on article.id = comments.article_id where 1 and comment.status=1.
+in G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\CommentController.php (13)
+in G:\AppServ\www\yiiblog\web\adminweb.php (17)
+2014/06/09 15:54:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'comment.status' in 'where clause'. The SQL statement executed was: SELECT article.article_title,comments.* from article  join comments on article.id = comments.article_id where 1 and comment.status=1' in G:\AppServ\www\yiiblog\framework\db\CDbCommand.php:541
+Stack trace:
+#0 G:\AppServ\www\yiiblog\framework\db\CDbCommand.php(376): CDbCommand->queryInternal('', 0, Array)
+#1 G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\CommentController.php(13): CDbCommand->query()
+#2 G:\AppServ\www\yiiblog\framework\web\actions\CInlineAction.php(49): CommentController->actionIndex()
+#3 G:\AppServ\www\yiiblog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 G:\AppServ\www\yiiblog\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 G:\AppServ\www\yiiblog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 G:\AppServ\www\yiiblog\framework\web\CWebApplication.php(282): CController->run('index')
+#7 G:\AppServ\www\yiiblog\framework\web\CWebApplication.php(141): CWebApplication->runController('comment/index')
+#8 G:\AppServ\www\yiiblog\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 G:\AppServ\www\yiiblog\web\adminweb.php(17): CApplication->run()
+#10 {main}
+REQUEST_URI=/adminweb.php?r=comment%2Findex&article_title=&status=1&searchsubmit=%E6%9F%A5%E8%AF%A2
+HTTP_REFERER=http://blog.com/adminweb.php?r=comment%2Findex&article_title=&status=1&searchsubmit=%E6%9F%A5%E8%AF%A2
+---
+2014/06/09 16:27:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message '错误的操作类型:选择操作' in G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\CommentController.php:59
+Stack trace:
+#0 G:\AppServ\www\yiiblog\framework\web\actions\CInlineAction.php(49): CommentController->actionCommand()
+#1 G:\AppServ\www\yiiblog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 G:\AppServ\www\yiiblog\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 G:\AppServ\www\yiiblog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 G:\AppServ\www\yiiblog\framework\web\CWebApplication.php(282): CController->run('command')
+#5 G:\AppServ\www\yiiblog\framework\web\CWebApplication.php(141): CWebApplication->runController('comment/command')
+#6 G:\AppServ\www\yiiblog\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#7 G:\AppServ\www\yiiblog\web\adminweb.php(17): CApplication->run()
+#8 {main}
+REQUEST_URI=/adminweb.php?r=comment/command
+HTTP_REFERER=http://blog.com/adminweb.php?r=comment/index
+---
+2014/06/09 16:29:43 [error] [php] YiiBase::include(Comments.php) [<a href='yiibase.include'>yiibase.include</a>]: failed to open stream: No such file or directory (G:\AppServ\www\yiiblog\framework\YiiBase.php:421)
+Stack trace:
+#0 G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\CommentController.php(51): spl_autoload_call()
+#1 G:\AppServ\www\yiiblog\framework\web\actions\CInlineAction.php(49): CommentController->actionCommand()
+#2 G:\AppServ\www\yiiblog\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 G:\AppServ\www\yiiblog\framework\web\CController.php(286): CommentController->runAction()
+#4 G:\AppServ\www\yiiblog\framework\web\CController.php(265): CommentController->runActionWithFilters()
+#5 G:\AppServ\www\yiiblog\framework\web\CWebApplication.php(282): CommentController->run()
+#6 G:\AppServ\www\yiiblog\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 G:\AppServ\www\yiiblog\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#8 G:\AppServ\www\yiiblog\web\adminweb.php(17): CWebApplication->run()
+REQUEST_URI=/adminweb.php?r=comment/command
+in G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\CommentController.php (51)
+in G:\AppServ\www\yiiblog\web\adminweb.php (17)

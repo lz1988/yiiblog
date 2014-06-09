@@ -92,43 +92,6 @@ class SiteController extends Controller
 	}
 
 
-
-	/*联系我*/
-	public function actionContact()
-	{
-		$model    = new ContactForm;
-		$criteria = new CDbCriteria;
-		$count = $model->count($criteria);
-		$pager = new CPagination($count);
-		$pager->pageSize = 8;  //每页显示的个数
-		$pager->applyLimit($criteria);	
-		$datalist = $model->findAll($criteria);
-
-		if(isset($_POST['ContactForm']))
-		{
-			$model->attributes=$_POST['ContactForm'];
-			if($model->validate())
-			{
-				if ($model->save()){
-					Yii::app()->user->setFlash('contact','谢谢联系我，我会尽快给你答复');
-					$this->refresh();
-				}
-			}
-		}
-		$this->render('contact',array('model'=>$model,'datalist'=>$datalist,'pagebar'=>$pager));
-	}
-
-	/*联系我*/
-	public function actionContacts()
-	{
-		$criteria=new CDbCriteria;
-		$criteria->condition='site_title=:site_title';
-		$criteria->params=array(':site_title'=>'联系我们');
-		$datalist = Site::model()->find($criteria);
-		$this->render('contact',array('datalist'=>$datalist));
-	}
-
-
 	public function actionLogin()
 	{
 		$model=new LoginForm;

@@ -10,7 +10,7 @@ Yii::setPathOfAlias('adminweb', $adminweb);
 return array(
 	//'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'basePath'=> $adminweb,
-	'name'=>'后台管理系统',
+	'name'=>'miucool后台管理系统',
 	'controllerPath' => $adminweb.'/controllers',
 	'viewPath' => $adminweb.'/views',
 	'runtimePath' => $adminweb.'/runtime',

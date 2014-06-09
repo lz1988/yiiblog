@@ -21,7 +21,7 @@
 				$new_key_words = explode(',',$row['key_words']);
 				foreach($new_key_words as $val)
 				{
-					$html .= '<a href ="?r=site/search_article&search_article='.CHtml::encode($val).'">'.$val.'</a>&nbsp;&nbsp;';
+					$html .= '<a href ="/article/search/keywords/'.CHtml::encode($val).'">'.$val.'</a>&nbsp;&nbsp;';
 				}
 				echo $html;
 

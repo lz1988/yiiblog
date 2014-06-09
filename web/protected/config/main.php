@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'miucool.cn个人博客',
+	'name'=>'miucool.cn',
 	'language'=>'zh_cn',
 	'theme'=>'classic',
 
@@ -55,8 +55,11 @@ return array(
             'showScriptName'=>false,     // false不需要引号
             'urlSuffix'=>'.html',
             'rules'=>array(
-                    'site'=>'site/index',
-                     ),
+                    ''=>'site/index',
+                    '<controller:article>-<id:\d+>' => '<controller>/view',
+                    '<controller:article>-<category:.+>' => '<controller>/index',
+
+            ),
         ),
 		/*'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
