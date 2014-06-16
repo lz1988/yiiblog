@@ -133,7 +133,7 @@ html,body,div,p,a,h3{margin:0;padding:0;}
     /*后台日志记录*/
     public static function adminiLogger($arr = array())
     { 
-        $model = new log();
+        $model = new Log();
         $model->attributes = $arr;
         !isset($arr['uname']) && $model->uname = Yii::app() -> session['uname'];
         $model->url = Yii::app()->request->getRequestUri();

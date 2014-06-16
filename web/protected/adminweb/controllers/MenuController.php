@@ -41,7 +41,7 @@ class MenuController extends Controller
 	/*修改菜单页面*/
 	public function actionUpdate()
 	{
-		$menu_list = globals::getmenulist();
+		$menu_list = Globals::getmenulist();
 		$model=Bases::loadModel(new Menu,$_GET['id']);
 		if ($_POST['Menu']){
 			$post = $_POST['Menu'];
@@ -95,7 +95,7 @@ class MenuController extends Controller
 	public function actionCreate()
 	{
 		$model = new Menu;
-		$menu_list = globals::getmenulist();
+		$menu_list = Globals::getmenulist();
 		if ($_POST['Menu']){
 			$post = $_POST['Menu'];
 			if ($post['pid'] == ""){

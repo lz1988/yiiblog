@@ -1,4 +1,4 @@
-﻿
+	<meta charset="utf-8"/>
     <link href="<?php echo Yii::app()->baseUrl ;?>/Source/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
     <script src="<?php echo Yii::app()->baseUrl ;?>/Source/lib/jquery/jquery-1.3.2.min.js" type="text/javascript"></script>    
     <script src="<?php echo Yii::app()->baseUrl ;?>/Source/lib/ligerUI/js/ligerui.min.js" type="text/javascript"></script> 

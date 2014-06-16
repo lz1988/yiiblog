@@ -55,7 +55,7 @@ return array(
             'showScriptName'=>false,     // false不需要引号
             'urlSuffix'=>'.html',
             'rules'=>array(
-                    ''=>'site/index',
+                    //'<controller:site>'=>'site/index',
                     '<controller:article>-<id:\d+>' => '<controller>/view',
                     '<controller:article>-<category:.+>' => '<controller>/index',
 

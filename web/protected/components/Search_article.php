@@ -13,6 +13,12 @@ class Search_article extends CPortlet
 
 	protected function renderContent()
 	{
+        /*$key_words = $_REQUEST['keywords'];
+        $arr_keyword = array();
+        if (!empty($keywords)){
+            $arr_keyword = array('keyword'=>$key_words);
+        }*/
+        //print_r($arr_keyword);
 		$this->render('search_article');
 	}
 }

@@ -31,8 +31,13 @@
 
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
-			'items' => $this->arrmenu(),
+			'items' =>  array(
+                array('label'=>'首页', 'url'=>array('/site')),
+                array('label'=>'关于站长', 'url'=>array('/about')),
+                array('label'=>'联系站长', 'url'=>array('/contact')),
+            )
 		)); ?>
+
 	</div><!-- mainmenu -->
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -51,13 +56,15 @@
 
 	<div id="footer">
         <div class="foot_info">
+        粤ICP备14038214号-1
         <?php echo CHtml::link("联系站长",array('/contact'));?>
         <?php echo CHtml::link("关于站长",array('/about'));?>
          </div>
 		Copyright &copy; <?php echo date('Y'); ?> by <a href="http://miucool.cn">miucool.cn</a>.
 		All Rights Reserved.
-		<?php echo Yii::powered(); ?>
-	</div><!-- footer -->
+		<?php echo Yii::powered(); ?><br/>
+        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5337037'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/stat.php%3Fid%3D5337037%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+    </div><!-- footer -->
 
 </div><!-- page -->
 
