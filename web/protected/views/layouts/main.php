@@ -31,8 +31,13 @@
 
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
-			'items' => $this->arrmenu(),
+			'items' =>  array(
+                array('label'=>'首页', 'url'=>array('/site')),
+                array('label'=>'关于站长', 'url'=>array('/about')),
+                array('label'=>'联系站长', 'url'=>array('/contact')),
+            )
 		)); ?>
+
 	</div><!-- mainmenu -->
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(

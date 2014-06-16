@@ -38,7 +38,9 @@ class Controller extends CController
            $re[$i]['label']   = $ar[$i]['article_type_name'];
            $re[$i]['url'][]     = "/article-".$ar[$i]['article_type_name'];
        }
-        return $re;
+       return $re;
+
+
         //echo '<pre>';print_r($re);
 
     }

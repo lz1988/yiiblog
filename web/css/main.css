@@ -1,12 +1,20 @@
-body
+/*body
 {
 	margin: 0;
 	padding: 0;
-	/*color: #555;*/
+	*//*color: #555;*//*
 	color: #424242;
 	font:  10pt 'Microsoft YaHei',Tahoma, Helvetica, Arial, sans-serif; color:#424242; background:#fff;
 	background: #EFEFEF;
-}
+}*/
+body {color:#555;font:10pt Arial,Helvetica,sans-serif;background:#F6F9FD;}
+a {color:#015BAB;text-decoration:none;}
+a:hover {color:#f00;text-decoration:underline;}
+h1, h2, h3, h4 {font-weight:bolder;}
+h1 {font-size:1.6em;margin:0.5em 0;}
+h2 {font-size:1.25em;margin:0.3em 0;}
+h3 {font-size:1.1em;margin:0.2em 0;}
+h4 {font-size:1.0em;margin:0.2em 0;}
 
 #page
 {
@@ -20,7 +28,7 @@ body
 {
 	margin: 0;
 	padding: 0;
-	border-top: 3px solid #C9E0ED;
+	/*border-top: 3px solid #C9E0ED;*/
 }
 
 #content
@@ -45,7 +53,7 @@ body
 	overflow: hidden;
 	padding:10px 0 0 0;
 }
-#maintag 
+#maintag
 {
 	margin:5px 0 20px 0;
 	color:#999;
@@ -56,7 +64,7 @@ body
 	margin:10px 0 20px 0;
 	border-bottom: 1px dashed gainsboro;
 }
-.readall 
+.readall
 {
 	margin-right:20px;
 	float: right;
@@ -101,7 +109,9 @@ body
 
 #mainmenu
 {
-	background:white url(bg.gif) repeat-x left top;
+	/*background:white url(bg.gif) repeat-x left top;*/
+    border-top: #14599A solid 3px;
+    background: #2C70AD;
 }
 
 #mainmenu ul
@@ -125,11 +135,19 @@ body
 	padding:5px 8px;
 }
 
+/*
 #mainmenu ul li a:hover, #mainmenu ul li.active a
 {
 	color: #6399cd;
 	background-color:#EFF4FA;
 	text-decoration:none;
+}
+*/
+
+#mainmenu ul li a:hover, #mainmenu ul li.active a {
+    color: #14599A;
+    background: #F6F9FD;
+    text-decoration: none;
 }
 
 div.flash-error, div.flash-notice, div.flash-success
