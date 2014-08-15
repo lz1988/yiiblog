@@ -5399,6 +5399,7 @@ Stack trace:
 REQUEST_URI=/adminweb.php?r=database
 HTTP_REFERER=http://blog.com/adminweb.php?r=manage/index
 ---
+<<<<<<< HEAD
 2014/07/17 09:50:07 [warning] [application] Failed to set unsafe attribute "article_click_count" of "Article".
 in G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\ArticleController.php (43)
 in G:\AppServ\www\yiiblog\web\adminweb.php (17)
@@ -5459,3 +5460,5 @@ Stack trace:
 REQUEST_URI=/adminweb.php?r=article/create
 in G:\AppServ\www\yiiblog\web\protected\adminweb\controllers\ArticleController.php (52)
 in G:\AppServ\www\yiiblog\web\adminweb.php (17)
+=======
+>>>>>>> 13ac5f5da4bd3c6e2ce0c518fdd092b045277a65

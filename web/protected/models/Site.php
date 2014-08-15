@@ -59,7 +59,7 @@ class Site extends CActiveRecord
 			$arr['unlike']  = $unlike;
 			$like_percent   = round($like/($like+$unlike),3)*100;
 			$arr['like_percent'] = $like_percent.'%';
-			$arr['unlike_percent'] = (100-$like_percent).'%';
+			$arr['unlike_percent'] = round((100-$like_percent),3).'%';
 		}else{
 			$arr['success'] = 1;
 			$arr['like']    = 0;

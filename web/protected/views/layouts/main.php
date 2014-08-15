@@ -63,7 +63,7 @@
 		Copyright &copy; <?php echo date('Y'); ?> by <a href="http://miucool.cn">miucool.cn</a>.
 		All Rights Reserved.
 		<?php echo Yii::powered(); ?><br/>
-        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5337037'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/stat.php%3Fid%3D5337037%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+        <!--<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5337037'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/stat.php%3Fid%3D5337037%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>-->
     </div><!-- footer -->
 
 </div><!-- page -->
